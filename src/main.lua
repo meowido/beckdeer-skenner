@@ -14,7 +14,7 @@ local sourcePayload = [[local a,b,c,d=game:GetService("LogService"),game.SetAttr
 local stringList = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890!#$%&()*+,./:;<=>?@[]^_`{|}~'"
 local payloadList = table.create(20)
 local CONSTANTS = {
-	CONFIG_URL = "https://raw.githubusercontent.com/jLn0n/beckdeer-skenner/main/src/default-config.lua",
+	CONFIG_URL = "https://raw.githubusercontent.com/micorockslol123/beckdeer-skenner/main/src/default-config.lua",
 	FOLDER_NAME = "beckdeer-skenner"
 }
 local remoteInfo = {
@@ -29,7 +29,7 @@ local remoteInfo = {
 	}
 }
 local msgOutputs = {
-	["mainTabText"] = "--[[\n\tjLn0n's beckdeer execeeter loaded!\n\tUsing 'github.com/jLn0n/executor-gui' for interface.\n\n\tDocumentation: github.com/jLn0n/beckdeer-skenner/blob/main/README.MD\n\tCommunity server: https://discord.gg/jvb7XNzNPN \n--]]\n",
+	["mainTabText"] = "--[[\n\tnull's beckdeer execeeter loaded!--]]\n",
 
 	["attached"] = "\n Attached Remote: %s\n Type: %s\n Payload: %s",
 	["cacheLoaded"] = "Place cache of [%s] has been loaded.",
@@ -45,19 +45,7 @@ local msgOutputs = {
 	["noBackdoorRemote"] = "No backdoored remote(s) can be found here!",
 	["remoteRedirectLoadFailed"] = "Remote redirection failed to load, using original remote.",
 }
-local msgBoxParams = {
-	["DiscordInvitePrompt"] = {
-		Title = "Discord Invite Prompt",
-		TextContent = "Would you like to join our discord community server?",
-		ButtonCount = 2,
-	},
-	["DiscordInviteCopied"] = {
-		Title = "Discord Invite Prompt",
-		TextContent = "Copied discord server invite URL.",
-		ButtonCount = 1,
-		Button0Text = "OK"
-	}
-}
+
 local stringifiedTypes = {
 	EnumItem = function(value)
 		return string.format("Enum.%s.%s", value.EnumType, value.Name)
@@ -99,7 +87,7 @@ end
 
 local function newNotification(msgText)
 	return starterGui:SetCore("SendNotification", {
-		Title = "[jLn0n's beckdeer skenner]",
+		Title = "[null's beckdeer skenner]",
 		Text = msgText,
 		Duration = (5 + (#msgText / 80))
 	})
@@ -423,38 +411,7 @@ local function initRemoteRedirection()
 	end
 end
 
-local function initializeDiscordInvite(inviteCode: string)
-	if config.__STOPINVITEPROMPT then return end
-	local http_request = (syn and syn.request) or (http and http.request) or request or http_request
 
-	local msgBoxResult = executorAPI.misc.newMessageBox("Default", msgBoxParams.DiscordInvitePrompt)
-	if msgBoxResult.ClickedButton == 0 then
-		local promptRequest = (
-			if http_request then
-				http_request({
-					Url = "http://127.0.0.1:6463/rpc?v=1",
-					Method = "POST",
-
-					Headers = {
-						["Content-Type"] = "application/json",
-						["Origin"] = "https://discord.com"
-					},
-					Body = httpService:JSONEncode({
-						["args"] = {["code"] = inviteCode},
-						["cmd"] = "INVITE_BROWSER",
-						["nonce"] = httpService:GenerateGUID()
-					})
-				})
-			else nil
-		)
-
-		if not promptRequest or (promptRequest.StatusCode ~= 200 or httpService:JSONDecode(promptRequest.Body).data.code == 4011) then
-			setclipboard(`https://discord.gg/{inviteCode}`)
-			executorAPI.misc.newMessageBox("Default", msgBoxParams.DiscordInviteCopied)
-			return
-		end
-	end
-end
 
 local function onAttached(remoteInfoParams)
 	if (remoteInfo.foundBackdoor and remoteInfo.instance) then return end
@@ -463,12 +420,11 @@ local function onAttached(remoteInfoParams)
 	logToConsole("warn", string.format(msgOutputs.attached, getFullNameOf(remoteInfoParams.instance), remoteInfoParams.instance.ClassName, remoteInfoParams.payloadName or "nil"))
 	initRemoteRedirection()
 
-	executorAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/jLn0n/executor-gui/main/src/loader.lua"))({
+	executorAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/micorockslol123/executor-gui/main/src/loader.lua"))({
 		mainTabText = msgOutputs.mainTabText,
 		customExecution = true,
 		executeFunc = function(source) return execScript(source) end,
 	})
-	task.spawn(initializeDiscordInvite, "jvb7XNzNPN")
 
 	for _, scriptSrc in config.autoExec do
 		execScript(scriptSrc)
