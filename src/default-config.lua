@@ -18,7 +18,7 @@ return {
 		[[require(79614678516456)]],
 		[[print("Processes done!")]],
 		[[require(125992639027440)["Require.EXE by E God"](%username%)]],
-		[[print("Heheheheh. umm *splashes all over table*")]],
+		[[print("Heheheheh. umm *splashes all over table*")]]
 	},
 
 	-- Remote filters that you don't want to be scanned
