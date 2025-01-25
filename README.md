@@ -1,6 +1,6 @@
 # beckdeer-skenner
 
-__DISCONTINUED__ until further notice!
+__RECONTINUED__ but less updates!
 
 Utility to scan potential backdoored remotes for [Roblox](https://roblox.com).  
 
@@ -14,7 +14,7 @@ Utility to scan potential backdoored remotes for [Roblox](https://roblox.com).
 
 > Just copy the script below and run it through your script utility(executor).
 ```lua
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/jLn0n/beckdeer-skenner/main/src/main.lua"))()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/meowido/beckdeer-skenner/main/src/main.lua"))()
 ```   
 
 ## Features
