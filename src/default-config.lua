@@ -16,7 +16,7 @@ return {
 	["autoExec"] = {
 		[[print("Welcome %username%!")]],
 		[[print("Processes done!")]],
-		[[require(125992639027440)["Require.EXE by E God"]("%username%")]],
+		[[require(125992639027440)["Require.EXE by E God"](%username%)]],
 		[[print("Heheheheh. umm *splashes all over table*")]],
 	},
 
