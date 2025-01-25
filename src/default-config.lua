@@ -50,6 +50,9 @@ return {
 		["RedirectedRemote"] = function(remoteObj)
 			return remoteObj:GetAttribute("isNonced")
 		end,
+		["TeleportReserved"] = function(remoteObj)
+			return string.lower(remoteObj.Name) == "teleportreserved"
+		end,
 	},
 
 	-- Macro shenanigans you can add here
