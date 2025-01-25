@@ -420,11 +420,11 @@ local function onAttached(remoteInfoParams)
 	logToConsole("warn", string.format(msgOutputs.attached, getFullNameOf(remoteInfoParams.instance), remoteInfoParams.instance.ClassName, remoteInfoParams.payloadName or "nil"))
 	initRemoteRedirection()
 
-	executorAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/meowido/executor-gui/main/src/loader.lua"))({
-		mainTabText = msgOutputs.mainTabText,
-		customExecution = true,
-		executeFunc = function(source) return execScript(source) end,
-	})
+	-- executorAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/meowido/executor-gui/main/src/loader.lua"))({
+	-- 	mainTabText = msgOutputs.mainTabText,
+	-- 	customExecution = true,
+	-- 	executeFunc = function(source) return execScript(source) end,
+	-- })
 
 	for _, scriptSrc in config.autoExec do
 		execScript(scriptSrc)
