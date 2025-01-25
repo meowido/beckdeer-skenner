@@ -7,7 +7,7 @@ return {
 	
 	-- @tweaks
 	["enableLogging"] = true, -- Logs anything that happens
-	["redirectOutput"] = true, -- Redirects output to console
+	["redirectOutput"] = false, -- Redirects output to console
 	["redirectRemote"] = true, -- Uses a custom-created remote for server-side execution
 
 	-- @customization
