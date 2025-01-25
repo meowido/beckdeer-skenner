@@ -4,7 +4,11 @@ __RECONTINUED__ but less updates!
 
 Utility to scan potential backdoored remotes for [Roblox](https://roblox.com).  
 
-**NOTE:** Make sure that you got the script from Scriptblox or this Github repo. There might have been reuploads of the script which includes malicious code.
+**NOTE:** This fork of [beckdeer-skeener](https://github.com/jLn0n/beckdeer-skenner/tree/main) is going/has implemented these things:
+* More scanning methods
+* No remote events needed after execution [✓]
+* Better detection
+* Better code [✓]
 
 ## Links
 * [Scriptblox Page](https://scriptblox.com/script/Universal-Script-jalon's-backdeer-skenner-6614)
