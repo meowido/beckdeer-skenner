@@ -14,8 +14,8 @@ local sourcePayload = [[local a,b,c,d=game:GetService("LogService"),game.SetAttr
 local stringList = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890!#$%&()*+,./:;<=>?@[]^_`{|}~'"
 local payloadList = table.create(20)
 local CONSTANTS = {
-	CONFIG_URL = "https://raw.githubusercontent.com/micorockslol123/beckdeer-skenner/main/src/default-config.lua",
-	FOLDER_NAME = "beckdeer-skenner"
+	CONFIG_URL = "https://raw.githubusercontent.com/meowido/beckdeer-skenner/main/src/default-config.lua",
+	FOLDER_NAME = "bs"
 }
 local remoteInfo = {
 	["foundBackdoor"] = false,
@@ -29,7 +29,7 @@ local remoteInfo = {
 	}
 }
 local msgOutputs = {
-	["mainTabText"] = "--[[\n\tnull's beckdeer execeeter loaded!--]]\n",
+	["mainTabText"] = "--[[\n\t guess it loaded!--]]\n",
 
 	["attached"] = "\n Attached Remote: %s\n Type: %s\n Payload: %s",
 	["cacheLoaded"] = "Place cache of [%s] has been loaded.",
@@ -43,7 +43,7 @@ local msgOutputs = {
 	["outdatedConfig"] = "The configuration file is outdated!\nIt is recommended to update the configuration to prevent errors.",
 	["configLoadFailed"] = "Local configuration failed to load, it might be corrupted.",
 	["noBackdoorRemote"] = "No backdoored remote(s) can be found here!",
-	["remoteRedirectLoadFailed"] = "Remote redirection failed to load, using original remote.",
+	["remoteRedirectLoadFailed"] = "Remote redirection failed to load, using original remote. (needs to be fixed URGENTLY!!)",
 }
 
 local stringifiedTypes = {
@@ -87,7 +87,7 @@ end
 
 local function newNotification(msgText)
 	return starterGui:SetCore("SendNotification", {
-		Title = "[null's beckdeer skenner]",
+		Title = "[WHAT THE FUCK WHO EVEN AM I??]",
 		Text = msgText,
 		Duration = (5 + (#msgText / 80))
 	})
@@ -420,7 +420,7 @@ local function onAttached(remoteInfoParams)
 	logToConsole("warn", string.format(msgOutputs.attached, getFullNameOf(remoteInfoParams.instance), remoteInfoParams.instance.ClassName, remoteInfoParams.payloadName or "nil"))
 	initRemoteRedirection()
 
-	executorAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/micorockslol123/executor-gui/main/src/loader.lua"))({
+	executorAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/meowido/executor-gui/main/src/loader.lua"))({
 		mainTabText = msgOutputs.mainTabText,
 		customExecution = true,
 		executeFunc = function(source) return execScript(source) end,
