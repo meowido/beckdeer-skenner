@@ -15,7 +15,7 @@ local stringList = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM12345678
 local payloadList = table.create(20)
 local CONSTANTS = {
 	CONFIG_URL = "https://raw.githubusercontent.com/meowido/beckdeer-skenner/main/src/default-config.lua",
-	FOLDER_NAME = "bs"
+	FOLDER_NAME = "beckdeer-skenner"
 }
 local remoteInfo = {
 	["foundBackdoor"] = false,
