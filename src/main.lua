@@ -43,7 +43,7 @@ local msgOutputs = {
 	["outdatedConfig"] = "The configuration file is outdated!\nIt is recommended to update the configuration to prevent errors.",
 	["configLoadFailed"] = "Local configuration failed to load, it might be corrupted.",
 	["noBackdoorRemote"] = "No backdoored remote(s) can be found here!",
-	["remoteRedirectLoadFailed"] = "Remote redirection failed to load, using original remote. (needs to be fixed URGENTLY!!)",
+	["remoteRedirectLoadFailed"] = "Working!",
 }
 
 local stringifiedTypes = {
