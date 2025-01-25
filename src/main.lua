@@ -24,7 +24,7 @@ local remoteInfo = {
 	["argSrcIndex"] = 1,
 	["srcFunc"] = nil,
 	["redirection"] = {
-		["__testver"] = false, -- using the test version might not always work, use with caution
+		["__testver"] = true, -- using the test version might not always work, use with caution
 		["initialized"] = false,
 	}
 }
@@ -87,7 +87,7 @@ end
 
 local function newNotification(msgText)
 	return starterGui:SetCore("SendNotification", {
-		Title = "[WHAT THE FUCK WHO EVEN AM I??]",
+		Title = "[FUCK THE WHAT]",
 		Text = msgText,
 		Duration = (5 + (#msgText / 80))
 	})
