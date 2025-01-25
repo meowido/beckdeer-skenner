@@ -24,7 +24,7 @@ local remoteInfo = {
 	["argSrcIndex"] = 1,
 	["srcFunc"] = nil,
 	["redirection"] = {
-		["__testver"] = true, -- using the test version might not always work, use with caution
+		["__testver"] = false, -- using the test version might not always work, use with caution
 		["initialized"] = false,
 	}
 }
