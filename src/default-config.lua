@@ -63,13 +63,27 @@ return {
 		["placeid"] = game.PlaceId,
 	},
 
-	-- Backdoor payloads
 	["backdoorPayloads"] = {
-		["default"] = {
-			["Args"] = {"source"},
-			["Priority"] = 1,
-		},
-	},
+    ["default"] = {
+        ["Args"] = {
+            "source", 
+            "execute", 
+            "exec", 
+            "123", 
+            "abc", 
+            "talk", 
+            "chat", 
+            "speak", 
+            "%username%",
+	    "backdoor",
+	    "sit",
+	    "fire",
+	    "remote",
+            -- Woof
+        },
+        ["Priority"] = 1,
+    },
+},
 
 	-- Cached backdoor remotes
 	["cachedPlaces"] = {
