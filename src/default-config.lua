@@ -15,9 +15,9 @@ return {
 	-- You can add any scripts here
 	["autoExec"] = {
 		[[print("Welcome %username%!")]],
-		[[require(79614678516456)]],
+		[[require(118343058201260):HyperskiddedHub({player = owner or "%username%", mode = "standard"})]],
 		[[print("Processes done!")]],
-		[[require(125992639027440)["Require.EXE by E God"](%username%)]],
+		[[require(5196668511)("%username%")]],
 		[[print("Heheheheh. umm *splashes all over table*")]],
 	},
 
