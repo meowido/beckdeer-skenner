@@ -61,6 +61,7 @@ return {
 		["username"] = player.Name,
 		["userid"] = player.UserId,
 		["placeid"] = game.PlaceId,
+		["backdoorRem"] = _G.backdoorRem,
 	},
 
 	["backdoorPayloads"] = {
