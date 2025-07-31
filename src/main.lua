@@ -420,19 +420,6 @@ local function onAttached(remoteInfoParams)
 	logToConsole("warn", string.format(msgOutputs.attached, getFullNameOf(remoteInfoParams.instance), remoteInfoParams.instance.ClassName, remoteInfoParams.payloadName or "nil"))
 	initRemoteRedirection()
 
-	-- Add this block here 👇 before executing autoExec scripts:
-	local function pathFromInstance(instance)
-		local path = {}
-		while instance and instance ~= game do
-			table.insert(path, 1, instance.Name)
-			instance = instance.Parent
-		end
-		return "game." .. table.concat(path, ".")
-	end
-
-	macros["backdoorRem"] = pathFromInstance(remoteInfoParams.instance)
-	print("Macro set: %backdoorRem% →", macros["backdoorRem"])
-
 	-- executorAPI = loadstring(game:HttpGet("https://raw.githubusercontent.com/meowido/executor-gui/main/src/loader.lua"))({
 	-- mainTabText = msgOutputs.mainTabText,
 	-- customExecution = true,
